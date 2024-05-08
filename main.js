@@ -1,8 +1,11 @@
 alert ("Bienvenido a EJ TRAINING")
 
-let consulta = confirm("¿Realizas crossfit?")
+let continuar = true;
 
-if(consulta == true){
+while (continuar){
+let consulta = confirm("¿Realizas crossfit?");
+
+if(consulta){
     let ejercicio = prompt("¿De qué ejercicio quieres calcular tu % de RM?\n(Opciones: Back Squat, Squat Clean, Peso Muerto, Squat Clean)");
 
     switch(ejercicio){
@@ -25,7 +28,9 @@ if(consulta == true){
     } 
     } else {
         alert("Gracias por visitar EJ TRAINING")
+        continuar = false;
     }
+}
 
 function calcularRM (rmMaxima, porcentaje){
     return rmMaxima * (porcentaje/100);
